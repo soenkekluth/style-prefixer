@@ -78,7 +78,7 @@ const applyVendorPrefix = (property) => {
 }
 
 
-export const getPrefix = (property) => {
+const getPrefix = (property) => {
   if (!cache[property]) {
     cache[property] = applyVendorPrefix(property);
   }
@@ -93,4 +93,6 @@ const prefixer = (obj) => {
   return result;
 };
 
-export default prefixer;
+exports.getPrefix = getPrefix;
+exports.prefixer = prefixer;
+exports.default = prefixer;
