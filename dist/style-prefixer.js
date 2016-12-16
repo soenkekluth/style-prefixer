@@ -63,6 +63,17 @@ var prefixer = function prefixer(obj) {
   return result;
 };
 
+var setStyle = function setStyle(elem, style) {
+  if (elem && style) {
+    var keys = Object.keys(style);
+    for (var i = 0, l = keys.length; i < l; i++) {
+      elem.style[getPrefix(keys[i])] = style[keys[i]];
+    }
+  }
+};
+
+exports.setStyle = setStyle;
 exports.getPrefix = getPrefix;
 exports.prefixer = prefixer;
+exports.prefix = prefixer;
 exports.default = prefixer;
